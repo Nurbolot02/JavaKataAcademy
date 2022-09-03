@@ -52,8 +52,8 @@ public class Main {
         RomanNumberEnum romanNumberEnum1 = RomanNumberEnum.valueOf(userInput[0]);
         RomanNumberEnum romanNumberEnum2 = RomanNumberEnum.valueOf(userInput[2]);
         int res = Integer.parseInt(arabicCalc(userInput[1], romanNumberEnum1.getTranslation(), romanNumberEnum2.getTranslation()));
-        if (res < 0) {
-            throw new Exception("в римской системе нет отрицательных чисел");
+        if (res <= 0) {
+            throw new Exception("в римской системе нет 0 и отрицательных чисел");
         }
         for (RomanNumberEnum rm : RomanNumberEnum.values()) {
             if (rm.getTranslation() == res) {
